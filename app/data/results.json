@@ -1,0 +1,243 @@
+{
+ "class_table": [
+  {
+   "index": "background (b)",
+   "events": 164333,
+   "event share": 0.657332,
+   "sum of weights": 410999.847322,
+   "weight share": 0.998319
+  },
+  {
+   "index": "signal (s)",
+   "events": 85667,
+   "event share": 0.342668,
+   "sum of weights": 691.988608,
+   "weight share": 0.001681
+  }
+ ],
+ "missing_pct": {
+  "all": {
+   "DER_deltaeta_jet_jet": 70.98,
+   "DER_mass_jet_jet": 70.98,
+   "DER_prodeta_jet_jet": 70.98,
+   "PRI_jet_subleading_phi": 70.98,
+   "DER_lep_eta_centrality": 70.98,
+   "PRI_jet_subleading_eta": 70.98,
+   "PRI_jet_subleading_pt": 70.98,
+   "PRI_jet_leading_eta": 39.97,
+   "PRI_jet_leading_pt": 39.97,
+   "PRI_jet_leading_phi": 39.97,
+   "DER_mass_MMC": 15.25
+  },
+  "background": {
+   "DER_deltaeta_jet_jet": 75.61,
+   "DER_mass_jet_jet": 75.61,
+   "DER_prodeta_jet_jet": 75.61,
+   "PRI_jet_subleading_phi": 75.61,
+   "DER_lep_eta_centrality": 75.61,
+   "PRI_jet_subleading_eta": 75.61,
+   "PRI_jet_subleading_pt": 75.61,
+   "PRI_jet_leading_eta": 45.29,
+   "PRI_jet_leading_pt": 45.29,
+   "PRI_jet_leading_phi": 45.29,
+   "DER_mass_MMC": 21.47
+  },
+  "signal": {
+   "DER_deltaeta_jet_jet": 62.1,
+   "DER_mass_jet_jet": 62.1,
+   "DER_prodeta_jet_jet": 62.1,
+   "PRI_jet_subleading_phi": 62.1,
+   "DER_lep_eta_centrality": 62.1,
+   "PRI_jet_subleading_eta": 62.1,
+   "PRI_jet_subleading_pt": 62.1,
+   "PRI_jet_leading_eta": 29.76,
+   "PRI_jet_leading_pt": 29.76,
+   "PRI_jet_leading_phi": 29.76,
+   "DER_mass_MMC": 3.31
+  }
+ },
+ "single_feature_auc_top": {
+  "DER_mass_transverse_met_lep": 0.737,
+  "PRI_tau_pt": 0.6922,
+  "DER_deltaeta_jet_jet": 0.6712,
+  "DER_lep_eta_centrality": 0.6681,
+  "DER_prodeta_jet_jet": 0.6648,
+  "DER_pt_ratio_lep_tau": 0.6621,
+  "DER_mass_jet_jet": 0.6523,
+  "DER_met_phi_centrality": 0.6392
+ },
+ "high_corr_pairs": {
+  "PRI_jet_num | PRI_jet_all_pt": 0.949,
+  "DER_sum_pt | PRI_jet_all_pt": 0.93,
+  "PRI_jet_leading_pt | PRI_jet_all_pt": 0.906,
+  "DER_sum_pt | PRI_jet_num": 0.876,
+  "DER_sum_pt | PRI_jet_leading_pt": 0.857,
+  "DER_mass_MMC | DER_mass_vis": 0.855,
+  "DER_pt_h | PRI_jet_all_pt": 0.849,
+  "DER_deltaeta_jet_jet | DER_mass_jet_jet": 0.848,
+  "DER_deltaeta_jet_jet | DER_prodeta_jet_jet": -0.82,
+  "DER_sum_pt | PRI_met_sumet": 0.82,
+  "DER_pt_h | DER_sum_pt": 0.805
+ },
+ "baselines": {
+  "all_signal_ams": 1.0840190018077986,
+  "random_ams": 0.6244565654385892
+ },
+ "best_weight_scheme": "class-balanced",
+ "fit_seconds": {
+  "Logistic Regression": 2.0,
+  "Decision Tree": 4.1,
+  "Random Forest": 33.2,
+  "Extra Trees": 35.8,
+  "HistGradientBoosting": 21.5,
+  "XGBoost": 10.6,
+  "LightGBM": 8.4
+ },
+ "auc_vs_ams_rank_corr": 0.9642857142857145,
+ "use_fe": false,
+ "fe_auc_gain": -7.245560808077922e-05,
+ "fe_ams_gain": -0.021525608542225516,
+ "cv_summary": [
+  {
+   "model": "XGBoost (chosen features)",
+   "AUC_mean": 0.90144,
+   "AUC_std": 0.00117,
+   "AMS_mean": 3.73953,
+   "AMS_std": 0.18293,
+   "frac_mean": 0.135
+  },
+  {
+   "model": "Ensemble (rank mean)",
+   "AUC_mean": 0.90094,
+   "AUC_std": 0.00121,
+   "AMS_mean": 3.7269,
+   "AMS_std": 0.18983,
+   "frac_mean": 0.151
+  },
+  {
+   "model": "HGB (+engineered)",
+   "AUC_mean": 0.89892,
+   "AUC_std": 0.00102,
+   "AMS_mean": 3.70924,
+   "AMS_std": 0.29061,
+   "frac_mean": 0.142
+  },
+  {
+   "model": "LightGBM (chosen features)",
+   "AUC_mean": 0.8999,
+   "AUC_std": 0.00126,
+   "AMS_mean": 3.70246,
+   "AMS_std": 0.14594,
+   "frac_mean": 0.164
+  },
+  {
+   "model": "HGB (base features)",
+   "AUC_mean": 0.89862,
+   "AUC_std": 0.00123,
+   "AMS_mean": 3.62135,
+   "AMS_std": 0.15096,
+   "frac_mean": 0.142
+  }
+ ],
+ "final_model": "XGBoost (chosen features)",
+ "chosen_fraction": 0.15,
+ "oof_ams_at_fraction": 3.6491851645942277,
+ "oof_plateau": [
+  0.115,
+  0.165
+ ],
+ "per_fold_ams_at_fraction": [
+  3.6412186356884564,
+  3.5185697156466738,
+  3.8028119072329827,
+  3.5779594434191475,
+  3.6837435818922857
+ ],
+ "val_hgb_ams_at_0p5": 2.3623695498320387,
+ "val_hgb_ams_best": 3.555224259900596,
+ "perm_importance_top": {
+  "DER_mass_MMC": 0.10285,
+  "DER_mass_vis": 0.04205,
+  "DER_mass_transverse_met_lep": 0.03436,
+  "PRI_tau_pt": 0.02501,
+  "DER_deltar_tau_lep": 0.01416,
+  "DER_met_phi_centrality": 0.00562,
+  "PRI_jet_leading_eta": 0.00551,
+  "PRI_lep_eta": 0.00351,
+  "PRI_met": 0.00314,
+  "PRI_tau_eta": 0.00198
+ },
+ "error_by_jet": [
+  {
+   "jet": 0,
+   "events": 19960.0,
+   "bkg weight selected (FP)": 2756.335,
+   "signal weight found (TP)": 130.573,
+   "signal weight missed (FN)": 233.435,
+   "FP events": 225.0,
+   "signal recall (weighted)": 0.359,
+   "s/sqrt(b)": 2.487
+  },
+  {
+   "jet": 1,
+   "events": 15505.0,
+   "bkg weight selected (FP)": 1430.695,
+   "signal weight found (TP)": 62.981,
+   "signal weight missed (FN)": 144.383,
+   "FP events": 225.0,
+   "signal recall (weighted)": 0.304,
+   "s/sqrt(b)": 1.665
+  },
+  {
+   "jet": 2,
+   "events": 14535.0,
+   "bkg weight selected (FP)": 897.254,
+   "signal weight found (TP)": 62.296,
+   "signal weight missed (FN)": 60.975,
+   "FP events": 456.0,
+   "signal recall (weighted)": 0.505,
+   "s/sqrt(b)": 2.08
+  }
+ ],
+ "fp_top1pct_weight_share": 0.043569083254195326,
+ "fp_fn_medians": {
+  "DER_mass_MMC": {
+   "FN": 113.29,
+   "FP": 122.19,
+   "TN": 101.03,
+   "TP": 127.93
+  },
+  "DER_mass_transverse_met_lep": {
+   "FN": 35.93,
+   "FP": 17.28,
+   "TN": 61.97,
+   "TP": 15.13
+  },
+  "DER_mass_vis": {
+   "FN": 76.13,
+   "FP": 80.33,
+   "TN": 69.17,
+   "TP": 83.42
+  },
+  "PRI_tau_pt": {
+   "FN": 33.19,
+   "FP": 48.07,
+   "TN": 28.32,
+   "TP": 51.38
+  }
+ },
+ "mmc_undef_share": {
+  "FN": 0.05986311165594034,
+  "TP": 0.001906318082788671,
+  "FP": 0.0011037527593818985
+ },
+ "submission": {
+  "rows": 550000,
+  "signal_fraction": 0.15,
+  "members": [
+   "XGBoost (chosen features)"
+  ]
+ },
+ "n_train": 250000,
+ "quick": false
+}

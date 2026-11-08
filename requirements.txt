@@ -1,0 +1,12 @@
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.0
+matplotlib>=3.8
+seaborn>=0.13
+jupyter
+nbconvert
+nbformat
+streamlit>=1.50

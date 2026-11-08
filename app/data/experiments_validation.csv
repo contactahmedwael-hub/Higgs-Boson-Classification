@@ -1,0 +1,30 @@
+Experiment,Preprocessing,Model,Training weights,AUC,wAUC,Acc@0.5,AMS@0.5,AMS_best,frac_signal,What changed?
+B0a,none,Dummy (all signal),-,0.5,0.5,0.34266,1.08402,1.08402,1.0,trivial reference
+B0b,none,Dummy (stratified random),-,0.5,0.5,0.55094,0.62446,0.62446,0.3404,random labels with class prior
+B1,"NaN -> median + indicators, StandardScaler, one-hot jet_num",LogisticRegression,none,0.81516,0.88111,0.7512,2.01738,2.07592,0.325,linear baseline
+M-A,keep -999 as a number,HistGradientBoosting,class-balanced,0.89721,0.93315,0.79156,2.37606,3.55987,0.155,missing-value strategy
+M-B,-999 -> NaN (native missing support),HistGradientBoosting,class-balanced,0.89708,0.93308,0.79094,2.36237,3.55522,0.165,missing-value strategy
+M-C,-999 -> median,HistGradientBoosting,class-balanced,0.89704,0.93297,0.7902,2.36221,3.55278,0.145,missing-value strategy
+M-D,-999 -> median + indicators,HistGradientBoosting,class-balanced,0.8968,0.93304,0.7889,2.35845,3.49449,0.125,missing-value strategy
+M-LR,"median imputation, no indicators",LogisticRegression,none,0.8146,0.88015,0.75104,2.01327,2.07361,0.32,drop the indicators from B1
+W-none,-999 -> NaN,HistGradientBoosting,none,0.90925,0.92843,0.84138,2.86028,3.50162,0.15,training weights
+W-raw,-999 -> NaN,HistGradientBoosting,raw Weight,0.85718,0.91082,0.68994,1.61922,3.15276,0.165,training weights
+W-class-balanced,-999 -> NaN,HistGradientBoosting,class-balanced,0.89708,0.93308,0.79094,2.36237,3.55522,0.165,training weights
+MOD-1,"NaN->median+indicators, scaled",Logistic Regression,none,0.81516,0.88111,0.7512,2.01738,2.07592,0.325,model family
+MOD-2,-999 kept,Decision Tree,class-balanced,0.86993,0.91481,0.75666,2.11367,2.79035,0.24,model family
+MOD-3,-999 kept,Random Forest,class-balanced,0.8864,0.92844,0.77274,2.29713,3.39081,0.125,model family
+MOD-4,-999 kept,Extra Trees,class-balanced,0.86116,0.91731,0.72838,2.14196,3.00744,0.195,model family
+MOD-5,-999 -> NaN,HistGradientBoosting,class-balanced,0.89708,0.93308,0.79094,2.36237,3.55522,0.165,model family
+MOD-6,-999 -> NaN,XGBoost,class-balanced,0.9004,0.93423,0.79834,2.40162,3.61921,0.165,model family
+MOD-7,-999 -> NaN,LightGBM,class-balanced,0.89874,0.93385,0.79458,2.39029,3.59518,0.155,model family
+FE-F0,base features,HistGradientBoosting,class-balanced,0.89708,0.93308,0.79094,2.36237,3.55522,0.165,feature set
+FE-F1,+ engineered features,HistGradientBoosting,class-balanced,0.89701,0.93363,0.7903,2.36421,3.5337,0.145,feature set
+FE-F2,base - raw phi,HistGradientBoosting,class-balanced,0.8972,0.93325,0.7902,2.36328,3.57239,0.155,feature set
+FE-F3,engineered - raw phi,HistGradientBoosting,class-balanced,0.89752,0.9341,0.79062,2.36911,3.52263,0.16,feature set
+FS-top10,"base features, top 10 of 30 by inner permutation importance",HistGradientBoosting,class-balanced,0.89314,0.93039,0.78796,2.31977,3.38035,0.12,feature subset
+FS-top20,"base features, top 20 of 30 by inner permutation importance",HistGradientBoosting,class-balanced,0.89724,0.93296,0.78918,2.35708,3.50908,0.15,feature subset
+G-1,"per jet group (0, 1, >=2)",HistGradientBoosting x3,class-balanced (per group),0.89816,0.92969,0.8054,2.35558,3.35501,0.16,separate model per PRI_jet_num group
+E-HGB,chosen feature set,HGB,class-balanced,0.89708,0.93308,0.79094,2.36237,3.55522,0.165,ensemble component
+E-XGB,chosen feature set,XGB,class-balanced,0.9004,0.93423,0.79834,2.40162,3.61921,0.165,ensemble component
+E-LGB,chosen feature set,LGB,class-balanced,0.89874,0.93385,0.79458,2.39029,3.59518,0.155,ensemble component
+E-ENS,chosen feature set,mean rank of HGB+XGB+LGB,class-balanced,0.89971,0.9345,,,3.63075,0.16,ensemble

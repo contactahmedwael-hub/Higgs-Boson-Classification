@@ -1,0 +1,6 @@
+model,AUC_mean,AUC_std,AMS_mean,AMS_std,frac_mean
+XGBoost (chosen features),0.90144,0.00117,3.73953,0.18293,0.135
+Ensemble (rank mean),0.90094,0.00121,3.7269,0.18983,0.151
+HGB (+engineered),0.89892,0.00102,3.70924,0.29061,0.142
+LightGBM (chosen features),0.8999,0.00126,3.70246,0.14594,0.164
+HGB (base features),0.89862,0.00123,3.62135,0.15096,0.142

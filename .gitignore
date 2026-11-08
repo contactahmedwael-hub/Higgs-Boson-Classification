@@ -1,0 +1,10 @@
+# raw data and large/derived files must not be committed
+data/*.csv
+data/*.zip
+submission/*.csv
+*.csv.gz
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+.env
+*.key
