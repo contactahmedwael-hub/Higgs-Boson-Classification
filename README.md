@@ -1,5 +1,7 @@
 # Higgs Boson Classification
 
+🔗 **Live demo:** [higgs-boson-classification.streamlit.app](https://higgs-boson-classification-cykjuusudmh4ugbfht2axm.streamlit.app/)
+
 A machine learning project that tells apart **Higgs boson signal events** from **background events** in particle collision data from the ATLAS experiment at CERN.
 
 ## The problem
